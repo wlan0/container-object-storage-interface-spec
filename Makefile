@@ -122,13 +122,13 @@ export PATH := $(shell pwd):$(PATH)
 ########################################################################
 ##                              BUILD                                 ##
 ########################################################################
-COSI_PROTO := ./cosi.proto
-COSI_PKG_ROOT := github.com/kubernetes-sigs/container-object-storage-interface-spec
+COSI_PROTO := ./osi.proto
+COSI_PKG_ROOT := sigs.k8s.io/osi-spec
 COSI_PKG_SUB := .
 COSI_BUILD := $(COSI_PKG_SUB)/.build
-COSI_GO := $(COSI_PKG_SUB)/cosi.pb.go
-COSI_A := cosi.a
-COSI_GO_TMP := $(COSI_BUILD)/$(COSI_PKG_ROOT)/cosi.pb.go
+COSI_GO := $(COSI_PKG_SUB)/osi.pb.go
+COSI_A := osi.a
+COSI_GO_TMP := $(COSI_BUILD)/$(COSI_PKG_ROOT)/osi.pb.go
 
 # This recipe generates the go language bindings to a temp area.
 $(COSI_GO_TMP): HERE := $(shell pwd)

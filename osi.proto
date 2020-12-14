@@ -1,9 +1,9 @@
 syntax = "proto3";
-package cosi.v1alpha1;
+package osi.v1alpha1;
 
 import "google/protobuf/descriptor.proto";
 
-option go_package = "cosi";
+option go_package = "osi";
 
 extend google.protobuf.EnumOptions {
     // Indicates that this enum is OPTIONAL and part of an experimental
@@ -22,7 +22,7 @@ extend google.protobuf.EnumValueOptions {
 extend google.protobuf.FieldOptions {
     // Indicates that a field MAY contain information that is sensitive
     // and MUST be treated as such (e.g. not logged).
-    bool cosi_secret = 1059;
+    bool osi_secret = 1059;
 
     // Indicates that this field is OPTIONAL and part of an experimental
     // API that may be deprecated and eventually removed between minor
