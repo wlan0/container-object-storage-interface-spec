@@ -295,12 +295,11 @@ message ProvisionerGetInfoResponse {
 }
 
 message ProvisionerCreateBucketRequest {    
-    // This field is REQUIRED
-    // Bucket name is the name of the bucket in the storage backend
-    string bucket_name = 1;
+	// This field is REQUIRED
+    // Protocol specific information required by the call is passed in as key,value pairs.
+    Protocol protocol = 1;
 
     // This field is OPTIONAL
-    // Protocol specific information required by the call is passed in as key,value pairs.
 	// The caller should treat the values in parameters as opaque. 
 	// The receiver is responsible for parsing and validating the values.
     map<string,string> parameters = 2;
@@ -308,8 +307,6 @@ message ProvisionerCreateBucketRequest {
     // This field is OPTIONAL
     // Allow uncredentialed access to bucket.
     AnonymousBucketAccessMode anonymous_bucket_access_mode = 3;
-
-    Protocol protocol = 4;
 }
 
 message ProvisionerCreateBucketResponse {
@@ -317,9 +314,15 @@ message ProvisionerCreateBucketResponse {
 }
 
 message ProvisionerDeleteBucketRequest {
-    // This field is REQUIRED
-    // Bucket name is the name of the bucket in the storage backend
-    string bucket_name = 1;
+	// This field is REQUIRED
+    // Protocol specific information required by the call is passed in as key,value pairs.
+    Protocol protocol = 1;
+	
+    // This field is OPTIONAL
+    // Protocol specific information required by the call is passed in as key,value pairs.
+	// The caller should treat the values in parameters as opaque. 
+	// The receiver is responsible for parsing and validating the values.
+    map<string,string> parameters = 2;
 }
 
 message ProvisionerDeleteBucketResponse {
@@ -327,9 +330,9 @@ message ProvisionerDeleteBucketResponse {
 }
 
 message ProvisionerGrantBucketAccessRequest {
-    // This field is REQUIRED
-    // Bucket name.
-    string bucket_name = 1;
+	// This field is REQUIRED
+    // Protocol specific information required by the call is passed in as key,value pairs.
+    Protocol protocol = 1;
     
     // This field is OPTIONAL
     // Protocol specific information required by the call is passed in as key,value pairs.
@@ -360,10 +363,10 @@ message ProvisionerGrantBucketAccessResponse {
 } 
  
 message ProvisionerRevokeBucketAccessRequest {
-    // This field is REQUIRED
-    // Bucket name.
-    string bucket_name = 1;
-    
+	// This field is REQUIRED
+    // Protocol specific information required by the call is passed in as key,value pairs.
+    Protocol protocol = 1;
+
     // This field is OPTIONAL
     // Protocol specific information required by the call is passed in as key,value pairs.
     map<string,string> parameters = 2;
